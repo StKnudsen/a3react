@@ -12,7 +12,10 @@ function Home() {
   if (user !== null) {
     return (
       <>
-        <h1>Welcome user id: {user.userId}</h1>
+        <h1>Welcome user id: {user.username}</h1>
+        <p>
+          userId: {user.userId} <br /> token: {user.token}
+        </p>
         <button
           onClick={() => {
             dispatch(logout());

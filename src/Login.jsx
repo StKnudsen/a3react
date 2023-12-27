@@ -19,7 +19,7 @@ function Login() {
     });
     const data = await response.json();
 
-    dispatch(login(data));
+    dispatch(login({ username, ...data }));
     navigate("/");
   }
 
@@ -32,6 +32,7 @@ function Login() {
           Username &apos;admin&lsquo;
           <br />
           <input
+            id="username"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -43,6 +44,7 @@ function Login() {
           Password &apos;secret&lsquo;
           <br />
           <input
+            id="password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
